@@ -10,8 +10,10 @@ var conString = "postgres://root:password@aa17gf7d0ugh9hp.crjstpn2rrf4.us-east-2
 
 app.get('/', function(req, res){
    var user = req.params.user;
-   //db(user,res);  
-   simulate_db(user,res);
+   //console.log("hi");
+   db(user,res);
+   //res.send("Hi");
+   
 });
 function db(user,res){ 
 	var client = new pg.Client(conString);
@@ -25,15 +27,10 @@ function db(user,res){
 		}
 		console.log(result.rows[0]);
 		res.send(result.rows);
+		//output: Tue Jan 15 2013 19:12:47 GMT-600 (CST)
 		client.end();
 	  });
 	});
-}
-
-function simulate_db(user,res){ 
-	var users = JSON.parse("./dev_db/db.json");
-	console.log(users);
-	
 }
 var port = process.env.port || 8081;
 

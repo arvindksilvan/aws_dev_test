@@ -6,7 +6,7 @@ var pg = require('pg');
 
 //var conString = "postgres://arvind:password@arvind-aws-dbinstance.clwbdwqnd08j.us-east-2.rds.amazonaws.com:5432/ebdb";
 
-var conString = "postgres://root:password@aa17gfd0ugh9hp.crjstpn2rrf4.us-east-2.rds.amazonaws.com:5432/ebdb";
+var conString = "postgres://root:password@aa17gf7d0ugh9hp.crjstpn2rrf4.us-east-2.rds.amazonaws.com:5432/ebdb";
 
 app.get('/', function(req, res){
    var user = req.params.user;

@@ -8,7 +8,7 @@ function db_initialise(res,query){
 	  if(err) {
 		return console.error('could not connect to postgres', err);
 	  }
-	  client.query('SELECT * FROM COMPANY', function(err, result) {
+	  client.query(query, function(err, result) {
 		if(err) {
 		  return console.error('error running query', err);
 		}
@@ -17,10 +17,19 @@ function db_initialise(res,query){
 	  });
 	});
 }
+
 function getAllUsers(req,res){
 	var query = 'SELECT * FROM COMPANY';
 	db_initialise(res,query);
+
+}
+
+function getSingleUser(req,res){
+	var params = req.params.id;
+	var query = 'SELECT * FROM COMPANY WHERE id =' + params;
+	db_initialise(res,query);
 }
 module.exports = {
-	getAllUsers: getAllUsers
+	getAllUsers: getAllUsers,
+	getSingleUser: getSingleUser
 };

@@ -26,7 +26,7 @@ function getAllUsers(req,res){
 }
 
 function getSingleUser(req,res){
-	const params = Integer.valueOf(req.params.id);
+	const params = parseInt(req.params.id);
 	const query = 'SELECT * FROM COMPANY WHERE id = $1';
 	const values = [params]
 	db_initialise(res,query,values);

@@ -20,15 +20,15 @@ function db_initialise(res,query,values){
 
 function getAllUsers(req,res){
 	const query = 'SELECT * FROM COMPANY';
-	const values = []
+	const values = [];
 	db_initialise(res,query,values);
 
 }
 
 function getSingleUser(req,res){
 	const params = req.params.id;
-	const query = 'INSERT INTO COMPANY(id, name, age, salary) VALUES($1, $2, $3, $4) RETURNING *';
-	const values = [4, "Arvind", 24, 25000]
+	const query = 'SELECT * FROM COMPANY WHERE id = $1';
+	const values = [3]
 	db_initialise(res,query,values);
 }
 module.exports = {

@@ -17,10 +17,11 @@ function db_initialise(res,query){
 	  });
 	});
 }
-function getAllUsers(res){
+function getAllUsers(req,res){
 	var query = 'SELECT * FROM COMPANY';
 	db_initialise(res,query);
 }
+function get
 module.exports = {
 	getAllUsers: getAllUsers
 };

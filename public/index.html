@@ -1,25 +1,26 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
- </head>
- <body>
- <div ng-app="myApp" ng-controller="myCtrl"> 
-
+<html lang="en">
+<!--@scripts-->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="controller.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+<!--@body-->
+<body>
+<div ng-app="myApp" ng-controller="mainController"> 
 <p>All Users</p>
-<h1>{{users}}</h1>
-
+<p>{{users}}</p>
 </div>
-
-<script>
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope, $http) {
-    $http.get('/users')
-    .then(function(response) {
-        $scope.users = response.data;
-    });
-});
-</script>
- </body>
-  </html>
+<table id="table_id" class="display">
+     <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Salary.</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>

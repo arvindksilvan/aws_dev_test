@@ -33,5 +33,6 @@ function getSingleUser(req,res){
 }
 module.exports = {
 	getAllUsers: getAllUsers,
-	getSingleUser: getSingleUser
+	getSingleUser: getSingleUser,
+	Try: Try
 };

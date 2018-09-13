@@ -34,5 +34,4 @@ function getSingleUser(req,res){
 module.exports = {
 	getAllUsers: getAllUsers,
 	getSingleUser: getSingleUser,
-	Try: Try
 };

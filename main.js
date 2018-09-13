@@ -11,7 +11,7 @@ app.get('/users', db.getAllUsers);
 app.get('/users/:id', db.getSingleUser);
 
 //test
-app.get('/test', db.test);
+//app.get('/test', db.test);
 
 var port = process.env.port || 8081;
 

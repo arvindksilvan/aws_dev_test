@@ -42,5 +42,5 @@ function test(req,res){
 module.exports = {
 	getAllUsers: getAllUsers,
 	getSingleUser: getSingleUser,
-	test: test
+	//test: test
 };

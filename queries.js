@@ -31,7 +31,16 @@ function getSingleUser(req,res){
 	const values = [params]
 	db_initialise(res,query,values);
 }
+
+/**
+//test
+function test(req,res){
+	var result = '[{"id":1,"name":"Paul","age":23,"salary":20000},{"id":2,"name":"Michael","age":25,"salary":20500},{"id":3,"name":"Joel","age":21,"salary":100},{"id":4,"name":"Arvind","age":24,"salary":25000}]';
+	res.send(result);
+}
+**/
 module.exports = {
 	getAllUsers: getAllUsers,
 	getSingleUser: getSingleUser,
+	test: test
 };

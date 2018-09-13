@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ </head>
+ <body>
+ <div ng-app="myApp" ng-controller="myCtrl"> 
+
+<p>All Users</p>
+<h1>{{users}}</h1>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+    $http.get('/users')
+    .then(function(response) {
+        $scope.users = response.data;
+    });
+});
+</script>
+ </body>
+  </html>

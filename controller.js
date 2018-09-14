@@ -1,4 +1,3 @@
-
 var app = angular.module('myApp', []);
 
 //@controllers
@@ -31,7 +30,7 @@ $(document).ready( function () {
     $('#tableId').DataTable({
 		"processing": true,
         "ajax": {
-			url: '/users',
+			url: '/test',
 			type: 'GET',
 			dataSrc:""
 			},
@@ -40,5 +39,8 @@ $(document).ready( function () {
         { data: 'age' },
         { data: 'salary' },
     ]
-    } );
+    });
+	var t = $('#tableId').DataTable();
+	t.row.add({"name":"LOL","age":"ABBB","salary":"SSS"});
 });
+		

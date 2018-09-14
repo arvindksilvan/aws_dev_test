@@ -45,10 +45,15 @@ function addUser(req,res){
 	var userName = userArray.name;
 	var userAge = userArray.age;
     var userSalary = userArray.salary;
+	console.log(userSalary);
 	//perform db query
-	const query = 'INSERT INTO COMPANY (name,age,salary) VALUES ($1,$2,$3)';
-	const values = [userName,userAge,userSalary];
-	db_initialise(res,query,values);
+	//const query = 'INSERT INTO COMPANY (name,age,salary) VALUES ($1,$2,$3)';
+	//const values = [userName,userAge,userSalary];
+	//db_initialise(res,query,values);
+	//redraw the table
+	//$('#tableId').clear();
+	//$('#tableId').rows.add(userSalary);
+	//$('#tableId').redraw();
 }	
 
 module.exports = {

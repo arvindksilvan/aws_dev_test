@@ -14,9 +14,21 @@ app.controller('testController', function($scope, $http) {
 		$scope.table = response.data;
 	});
 });
-
+app.controller('submitUserController', function($scope, $http){
+	$scope.submitUser = function () {
+		var Indata = {name:$scope.userName,age:$scope.userAge,salary:$scope.userSalary};
+		var odata = JSON.stringify(Indata);
+		$http.post("/addUser", odata).
+		then(function (data, status, headers, config) { 
+			console.log('success');
+		},function (data, status, headers, config) { 
+			console.log('error'); 
+		});
+    }
+});
+	
 $(document).ready( function () {
-    $('#table_id').DataTable({
+    $('#tableId').DataTable({
 		"processing": true,
         "ajax": {
 			url: '/users',

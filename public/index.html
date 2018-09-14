@@ -5,14 +5,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 <script type="text/javascript" src="controller.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 <!--@body-->
 <body>
-<div ng-app="myApp" ng-controller="mainController"> 
+<div ng-app="myApp">
+<div ng-controller="mainController"> 
 <p>All Users</p>
 <p>{{users}}</p>
 </div>
-<table id="table_id" class="display">
+<table id="tableId" class="display">
      <thead>
             <tr>
                 <th>Name</th>
@@ -21,5 +23,21 @@
             </tr>
         </thead>
     </table>
+<div ng-controller="submitUserController" class="customform">
+  <form ng-submit="submitUser()">
+    <label for="name">Name</label>
+    <input type="text" ng-model="userName" placeholder="Your name..">
+
+    <label for="age">Age</label>
+    <input type="number" min="1" ng-model="userAge" placeholder="Your Age..">
+	
+	<label for="salary">Salary</label>
+    <input type="number" min="100" ng-model="userSalary" placeholder="Your Salary..">
+  
+    <input type="submit" value="Submit">
+  </form>
+  <p>{{test}}</p>
+</div>
+</div>
 </body>
 </html>

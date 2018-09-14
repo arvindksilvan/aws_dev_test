@@ -47,7 +47,7 @@ function addUser(req,res){
     var userSalary = userArray.salary;
 	//perform db query
 	const query = 'INSERT INTO COMPANY (name,age,salary) VALUES ($1,$2,$3)';
-	const values = [userArray,userName,userAge];
+	const values = [userName,userAge,userSalary];
 	db_initialise(res,query,values);
 }	
 
